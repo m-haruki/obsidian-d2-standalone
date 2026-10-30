@@ -1,7 +1,7 @@
 {
   "id": "dtwo-standalone",
   "name": "D2 Standalone",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "minAppVersion": "1.2.3",
   "description": "Render D2 diagrams without installing D2 — fully standalone and cross-platform. Unofficial, not affiliated with Terrastruct.",
   "author": "M_Haruki",
