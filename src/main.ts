@@ -73,7 +73,7 @@ export default class D2Standalone extends Plugin {
     loadingEl.remove();
     el.appendChild(svgEl);
     // calculate initial zoom and position to fit the SVG within the container
-    await new Promise((resolve) => requestAnimationFrame(resolve));
+    await new Promise((resolve) => window.requestAnimationFrame(resolve));
     let initialX, initialY, initialZoom;
     if (
       isFinite(svgEl.clientWidth) &&
