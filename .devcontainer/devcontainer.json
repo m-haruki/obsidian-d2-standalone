@@ -1,12 +1,11 @@
-// メモ
-// dockerfileだけでは、@fsあたりへのアクセスがうまくいかず、
-// docker-composeを介すことで、正常に動作するようになった。
-
 {
   "name": "obsidian-d2-standalone",
-  "dockerComposeFile": "compose.yml",
-  "service": "app",
-  "workspaceFolder": "/workspace",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:5-24-trixie",
+  "mounts": [
+    "source=obsidian-d2-standalone-node-modules,target=/workspaces/obsidian-d2-standalone/node_modules,type=volume"
+  ],
+  "remoteUser": "node",
+  "postCreateCommand": "sudo chown -R node:node /workspaces/obsidian-d2-standalone/node_modules",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -15,6 +14,5 @@
         "EditorConfig.EditorConfig"
       ]
     }
-  },
-  "remoteUser": "node"
+  }
 }
